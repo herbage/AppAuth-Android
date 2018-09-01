@@ -294,7 +294,7 @@ public class AuthorizationManagementActivity extends Activity {
     }
 
     private void extractState(Bundle state) {
-        if (state == null) {
+        if (state == null || !state.containsKey(KEY_AUTH_INTENT)) {
             Logger.warn("No stored state - unable to handle response");
             finish();
             return;
